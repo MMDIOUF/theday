@@ -1,6 +1,5 @@
 import React from 'react';
 import { RomanticTimeline } from './components/Timeline';
-import { QRGenerator } from './components/QRGenerator';
 
 interface TimelineEntry {
   title: string;
@@ -131,7 +130,6 @@ function App() {
   return (
     <div className="min-h-screen">
       <RomanticTimeline data={timelineData} />
-      <QRGenerator />
     </div>
   );
 }
