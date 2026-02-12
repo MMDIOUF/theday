@@ -112,7 +112,7 @@ export const RomanticTimeline: React.FC<RomanticTimelineProps> = ({ data }) => {
         </motion.div>
 
         {/* Timeline Content */}
-        <div ref={ref} className="relative pb-20">
+        <div ref={ref} className="relative pb-20 px-2 md:px-0">
           {data.map((item, index) => (
             <div key={index} className={`flex justify-start ${getSpacingClass(item.spacing)} md:gap-10`}>
               {/* Timeline Point and Title */}
@@ -153,7 +153,7 @@ export const RomanticTimeline: React.FC<RomanticTimelineProps> = ({ data }) => {
               </div>
 
               {/* Content Card */}
-              <div className="relative pl-20 pr-4 md:pl-4 w-full">
+              <div className="relative pl-20 pr-2 md:pl-4 w-full">
                 {/* Mobile Title */}
                 <h3 
                   className="md:hidden block text-2xl mb-4 text-left font-script font-bold"
@@ -167,7 +167,7 @@ export const RomanticTimeline: React.FC<RomanticTimelineProps> = ({ data }) => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1.2, delay: index * 0.1 }}
-                  className="romantic-card animate-float max-w-2xl"
+                  className="romantic-card animate-float w-full"
                   whileHover={{ 
                     y: -5,
                     transition: { duration: 0.3 }
