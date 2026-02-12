@@ -42,25 +42,35 @@
     width: 100%;
   }
   
-  /* Mobile optimizations - Cards plus larges */
+  /* Mobile optimizations - Cards plus compactes */
   @media (max-width: 640px) {
     .romantic-card {
-      padding: 1.25rem;
+      padding: 1rem;
       margin: 0;
       border-radius: 0.75rem;
-      width: calc(100vw - 6rem);
-      max-width: calc(100vw - 6rem);
-      min-width: calc(100vw - 6rem);
+      width: calc(100vw - 8rem);
+      max-width: calc(100vw - 8rem);
+      min-width: calc(100vw - 8rem);
     }
   }
   
   /* Small mobile optimizations */
   @media (max-width: 480px) {
     .romantic-card {
-      width: calc(100vw - 4rem);
-      max-width: calc(100vw - 4rem);
-      min-width: calc(100vw - 4rem);
-      padding: 1rem;
+      width: calc(100vw - 7rem);
+      max-width: calc(100vw - 7rem);
+      min-width: calc(100vw - 7rem);
+      padding: 0.875rem;
+    }
+  }
+  
+  /* Very small mobile optimizations */
+  @media (max-width: 360px) {
+    .romantic-card {
+      width: calc(100vw - 6rem);
+      max-width: calc(100vw - 6rem);
+      min-width: calc(100vw - 6rem);
+      padding: 0.75rem;
     }
   }
   
@@ -112,6 +122,14 @@
     .romantic-text {
       font-size: 0.8rem;
       line-height: 1.4;
+    }
+  }
+  
+  /* Very small mobile text optimizations */
+  @media (max-width: 360px) {
+    .romantic-text {
+      font-size: 0.75rem;
+      line-height: 1.3;
     }
   }
   

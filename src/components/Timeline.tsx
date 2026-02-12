@@ -112,7 +112,7 @@ export const RomanticTimeline: React.FC<RomanticTimelineProps> = ({ data }) => {
         </motion.div>
 
         {/* Timeline Content */}
-        <div ref={ref} className="relative pb-20 px-2 md:px-0">
+        <div ref={ref} className="relative pb-20 px-1 md:px-0">
           {data.map((item, index) => (
             <div key={index} className={`flex justify-start ${getSpacingClass(item.spacing)} md:gap-10`}>
               {/* Timeline Point and Title */}
@@ -153,10 +153,10 @@ export const RomanticTimeline: React.FC<RomanticTimelineProps> = ({ data }) => {
               </div>
 
               {/* Content Card */}
-              <div className="relative pl-20 pr-2 md:pl-4 w-full">
+              <div className="relative pl-20 pr-1 md:pl-4 w-full">
                 {/* Mobile Title */}
                 <h3 
-                  className="md:hidden block text-2xl mb-4 text-left font-script font-bold"
+                  className="md:hidden block text-xl mb-3 text-left font-script font-bold"
                   style={{ color: '#2d1b1b' }} // Marron très foncé
                 >
                   {item.title}
