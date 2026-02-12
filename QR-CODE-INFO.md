@@ -27,17 +27,18 @@
 ### Option 3: QR Code rapide en ligne
 **Lien direct:** https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://tiopatti-xolle.vercel.app/&color=2d1b1b&bgcolor=fdf9f9&margin=20
 
-## Message d'accompagnement suggéré
+## Message d'accompagnement pour le QR Code
 
 ```
-🌹 Pour Nourou Qalbi 🌹
+💕 St valentin avant l'heure… 💕
 
-"Scanne ce code pour découvrir 
-quelque chose de spécial que 
-j'ai créé juste pour toi ❤️
+I couldn't wait until tomorrow to show you 
+how much i love you.
 
-Une lettre d'amour interactive
-qui raconte notre histoire..."
+Scan ce code pour découvrir ce que les 
+battements de mon cœur disent de toi.
+
+🌹❤️🌹
 ```
 
 ## Idées d'utilisation romantique
