@@ -6,12 +6,11 @@
 
 @layer base {
   body {
-    background-color: #fdf9f9; /* Blanc rosé très clair */
-    color: #2d1b1b; /* Marron très foncé pour lisibilité */
+    background-color: #fdf9f9;
+    color: #2d1b1b;
     font-family: 'Courier New', monospace;
   }
   
-  /* Noise très subtil en arrière-plan */
   body::before {
     content: '';
     position: fixed;
@@ -25,100 +24,158 @@
     pointer-events: none;
     z-index: -2;
   }
-  
-  /* Fallback pour les navigateurs qui ne supportent pas les SVG */
-  @supports not (background-image: url("data:image/svg+xml,")) {
-    body {
-      background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 25%, #f1b0b7 50%, #ec999f 75%, #e8848a 100%);
-      position: relative;
-    }
-    
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 1px,
-        rgba(255, 255, 255, 0.03) 1px,
-        rgba(255, 255, 255, 0.03) 2px
-      );
-      pointer-events: none;
-      z-index: -1;
-    }
-  }
 }
 
 @layer components {
   .romantic-card {
     background-color: rgba(250, 248, 245, 0.95);
-    border-radius: 0.5rem;
-    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.3), 0 8px 16px -8px rgba(0, 0, 0, 0.2);
-    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
     border: 1px solid rgba(196, 164, 164, 0.4);
-    transition: all 1.2s ease;
+    transition: all 0.3s ease;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Mobile optimizations */
+  @media (max-width: 640px) {
+    .romantic-card {
+      padding: 1rem;
+      margin: 0 0.5rem;
+      border-radius: 0.75rem;
+      max-width: calc(100vw - 5rem);
+    }
+  }
+  
+  /* Tablet optimizations */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .romantic-card {
+      padding: 1.75rem;
+      max-width: 85%;
+    }
+  }
+  
+  /* Desktop optimizations */
+  @media (min-width: 1025px) {
+    .romantic-card {
+      padding: 2rem;
+      max-width: 42rem;
+    }
   }
   
   .romantic-card:hover {
-    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.4), 0 12px 24px -8px rgba(0, 0, 0, 0.3);
-    animation: heartbeat 2s ease-in-out infinite;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.25), 0 8px 12px -4px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
     background-color: rgba(250, 248, 245, 0.98);
+  }
+  
+  .romantic-text {
+    color: #2d1b1b;
+    line-height: 1.6;
+    word-spacing: 0.05em;
+    hyphens: auto;
+    text-align: justify;
+  }
+  
+  /* Mobile text optimizations */
+  @media (max-width: 640px) {
+    .romantic-text {
+      font-size: 0.875rem;
+      line-height: 1.5;
+      text-align: left;
+    }
+  }
+  
+  /* Tablet text optimizations */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .romantic-text {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+  }
+  
+  .romantic-text p {
+    margin-bottom: 0.75rem;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  
+  .romantic-text p:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Mobile paragraph spacing */
+  @media (max-width: 640px) {
+    .romantic-text p {
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  .romantic-text br {
+    margin-bottom: 0.25rem;
   }
   
   .romantic-title {
     font-family: 'Dancing Script', cursive;
-    color: #2d1b1b; /* Marron très foncé pour contraste */
-  }
-  
-  .romantic-text {
-    color: #2d1b1b; /* Marron très foncé pour contraste */
-    line-height: 2;
+    color: #2d1b1b;
   }
 
-  /* Envelope 3D Effects */
-  .envelope-3d {
-    perspective: 1000px;
+  /* Spacing optimizations */
+  .space-y-4 > * + * {
+    margin-top: 0.75rem;
   }
-  
-  .envelope-flap {
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
+
+  .space-y-6 > * + * {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    .space-y-4 > * + * {
+      margin-top: 0.5rem;
+    }
+    
+    .space-y-6 > * + * {
+      margin-top: 0.75rem;
+    }
   }
 }
 
 @keyframes heartbeat {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  50% { transform: scale(1.02); }
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-5px); }
 }
 
 @keyframes pulse-glow {
   0%, 100% { 
-    box-shadow: 0 0 20px rgba(196, 164, 164, 0.3);
+    box-shadow: 0 0 15px rgba(196, 164, 164, 0.3);
   }
   50% { 
-    box-shadow: 0 0 30px rgba(196, 164, 164, 0.6);
+    box-shadow: 0 0 25px rgba(196, 164, 164, 0.5);
   }
 }
 
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
 }
 
 .animate-heartbeat {
-  animation: heartbeat 2s ease-in-out infinite;
+  animation: heartbeat 3s ease-in-out infinite;
 }
 
 .animate-pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.font-script {
+  font-family: 'Dancing Script', cursive;
 }

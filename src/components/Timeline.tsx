@@ -167,7 +167,7 @@ export const RomanticTimeline: React.FC<RomanticTimelineProps> = ({ data }) => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1.2, delay: index * 0.1 }}
-                  className="romantic-card animate-float"
+                  className="romantic-card animate-float max-w-2xl"
                   whileHover={{ 
                     y: -5,
                     transition: { duration: 0.3 }
@@ -175,8 +175,8 @@ export const RomanticTimeline: React.FC<RomanticTimelineProps> = ({ data }) => {
                 >
                   {/* Text Content */}
                   <div 
-                    className="romantic-text text-base md:text-lg"
-                    style={{ color: '#2d1b1b', lineHeight: '2' }} // Marron très foncé
+                    className="romantic-text text-sm md:text-base leading-relaxed md:leading-loose"
+                    style={{ color: '#2d1b1b' }}
                   >
                     {item.content}
                   </div>
