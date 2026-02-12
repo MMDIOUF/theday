@@ -31,14 +31,7 @@ export const DynamicBackground: React.FC<DynamicBackgroundProps> = ({
   // Créer des transitions fluides entre couleurs claires
   const scrollProgress = useTransform(scrollYProgress, [0, 1], [0, totalSections - 1]);
   
-  // Calculer la couleur actuelle
-  const getCurrentColor = (progress: number) => {
-    const sectionIndex = Math.floor(progress);
-    if (sectionIndex >= lightColors.length - 1) {
-      return lightColors[lightColors.length - 1];
-    }
-    return lightColors[sectionIndex];
-  };
+
 
   useEffect(() => {
     const unsubscribe = scrollProgress.on('change', (latest) => {

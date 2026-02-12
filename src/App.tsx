@@ -1,5 +1,6 @@
 import React from 'react';
 import { RomanticTimeline } from './components/Timeline';
+import { QRGenerator } from './components/QRGenerator';
 
 interface TimelineEntry {
   title: string;
@@ -110,13 +111,13 @@ function App() {
             Geunne leu Beugeutti Tey<br />
             Teh Soubeu laalay Geuneu beugaat.
           </p>
-          <p 
+          <p
             className="text-lg font-semibold font-script"
             style={{ color: '#2d1b1b' }} // Marron très foncé pour contraste
           >
             Happy love day today and everyday.
           </p>
-          <p 
+          <p
             className="text-xl font-bold font-script"
             style={{ color: '#1a0f0f' }} // Presque noir pour le message final
           >
@@ -130,6 +131,7 @@ function App() {
   return (
     <div className="min-h-screen">
       <RomanticTimeline data={timelineData} />
+      <QRGenerator />
     </div>
   );
 }

@@ -48,7 +48,15 @@ Après déploiement, vous obtiendrez une URL comme :
 
 ## Étape 3 : Générer le QR Code
 
-### Option A : En ligne (Rapide)
+### Option A : Générateur intégré (Nouveau !)
+Cette application inclut maintenant un générateur de QR code intégré !
+1. Ouvrez votre site déployé
+2. Cherchez le bouton "Générer QR" (ou l'icône QR) en bas à droite
+3. Entrez l'URL de votre site
+4. Un QR code stylisé sera généré automatiquement
+5. Téléchargez-le directement
+
+### Option B : En ligne (Alternative)
 1. Allez sur [qr-code-generator.com](https://www.qr-code-generator.com/)
 2. Collez votre URL Vercel
 3. Personnalisez :
@@ -57,7 +65,7 @@ Après déploiement, vous obtiendrez une URL comme :
    - **Style** : Coins arrondis pour un look romantique
 4. Téléchargez en haute qualité (PNG/SVG)
 
-### Option B : QR Code personnalisé romantique
+### Option C : QR Code personnalisé romantique
 1. Utilisez [QR Code Monkey](https://www.qrcode-monkey.com/)
 2. **URL** : Votre lien Vercel
 3. **Design** :
@@ -67,7 +75,7 @@ Après déploiement, vous obtiendrez une URL comme :
    - Logo : Cœur ou fleur au centre
 4. **Taille** : 1000x1000px minimum pour impression
 
-### Option C : QR Code avec message
+### Option D : QR Code avec message
 Créez un QR code avec texte personnalisé :
 ```
 🌹 Pour Nourou Qalbi 🌹
